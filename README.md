@@ -1,6 +1,6 @@
 # MQTT IoT Adversarial ML Reproduction
 
-This is a cleaned-up version of a university reproduction project on MQTT IoT security and adversarial machine learning.
+This is a software-only reproduction project on MQTT IoT security and adversarial machine learning.
 
 I reproduced the software side of a published study that generated MQTT-like adversarial messages and tested how several anomaly-detection models responded. I did not reproduce the original Raspberry Pi / WiFi Pineapple MITM setup. The useful part here is the evaluation workflow: generate modified messages, run classifiers, compare accuracy and false negatives, and write down where the reproduction has limits.
 
