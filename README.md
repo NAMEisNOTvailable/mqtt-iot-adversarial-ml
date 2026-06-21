@@ -22,15 +22,14 @@ The workflow generates MQTT-like adversarial messages from sample telemetry data
 
 In the saved run, discriminator accuracy ranged from `0.508` to `0.832`, and false negatives ranged from `15/250` to `72/250`. These numbers are specific to the software workflow and sample dataset used here.
 
-## Files
+## Repository Layout
 
 | Path | Purpose |
 | --- | --- |
-| `notebooks/mqtt_adversarial_ml_reproduction.ipynb` | Notebook with outputs removed. |
-| `data/weather_sample_data.csv` | Sample data from the original MIT-licensed repo. |
-| `docs/results-summary.md` | Result numbers and interpretation. |
-| `docs/reproduction-notes.md` | Reproduction scope, changes and limitations. |
-| `scripts/check_repo.py` | Small check to catch missing files or accidental course/private markers. |
+| `notebooks/mqtt_adversarial_ml_reproduction.ipynb` | Reproduction notebook for message generation, classifier evaluation and result plots. |
+| `data/weather_sample_data.csv` | Sample telemetry data used by the notebook. |
+| `docs/results-summary.md` | Main result ranges and interpretation. |
+| `docs/reproduction-notes.md` | Source attribution, setup changes and limitations. |
 
 ## Run Locally
 
