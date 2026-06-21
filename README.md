@@ -12,7 +12,7 @@ I reproduced the software side of a published study that generated MQTT-like adv
 
 ## What I Did
 
-- Adapted the original MIT-licensed notebook into a cleaner local reproduction.
+- Adapted the original MIT-licensed notebook into a local reproduction.
 - Used the sample weather telemetry data from the original code repository.
 - Generated adversarial MQTT-like messages from numeric and text-like fields.
 - Benchmarked Logistic Regression, Random Forest, KNN, MLP and SVC.
@@ -21,17 +21,15 @@ I reproduced the software side of a published study that generated MQTT-like adv
 
 ## Main Takeaway
 
-The saved run showed that model behaviour changed noticeably as the generated messages were perturbed. Discriminator accuracy ranged from `0.508` to `0.832`, while false negatives ranged from `15/250` to `72/250`.
-
-I would not present this as a new attack method. It is better read as a reproduction and evaluation exercise: a small study of how adversarially generated IoT-style messages can affect anomaly-detection results, and what has to be treated carefully when reproducing that kind of paper.
+The run showed a clear change in model behaviour as generated messages were perturbed: discriminator accuracy ranged from `0.508` to `0.832`, and false negatives ranged from `15/250` to `72/250`. The project is mainly useful as a reproduction record: it checks whether the original software workflow runs, compares how the models respond, and notes what the result does not prove.
 
 ## Files
 
 | Path | Purpose |
 | --- | --- |
-| `notebooks/mqtt_adversarial_ml_reproduction.ipynb` | Cleaned notebook with outputs removed. |
+| `notebooks/mqtt_adversarial_ml_reproduction.ipynb` | Notebook with outputs removed. |
 | `data/weather_sample_data.csv` | Sample data from the original MIT-licensed repo. |
-| `docs/results-summary.md` | The result numbers I would actually cite. |
+| `docs/results-summary.md` | Result numbers and interpretation. |
 | `docs/reproduction-notes.md` | What changed from the original code and what was not reproduced. |
 | `scripts/check_repo.py` | Small check to catch missing files or accidental course/private markers. |
 
