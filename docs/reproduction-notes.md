@@ -9,7 +9,7 @@ This repo is based on the MIT-licensed code from:
 
 The paper behind that code studied MQTT-based IoT MITM scenarios and a BERT-based adversarial message generator inspired by GANs.
 
-## What I Reproduced
+## Reproduced Workflow
 
 - Sample telemetry data loading.
 - Adversarial message generation for numeric and text-like MQTT fields.
@@ -17,13 +17,13 @@ The paper behind that code studied MQTT-based IoT MITM scenarios and a BERT-base
 - Evaluation of generated messages with multiple anomaly-detection classifiers.
 - Comparison of accuracy and false-negative behaviour across perturbation settings.
 
-## What I Changed for This Public Repo
+## Repo Adjustments
 
-- Cleared notebook outputs so the file is easier to review.
-- Replaced the Colab install cell with `requirements.txt`.
-- Bundled the sample dataset locally and kept the original attribution.
-- Fixed the WordNet alias issue by defining both `wn` and `wordnet`.
-- Left out the original assignment report files because they contain course-style formatting and personal metadata that do not belong in a public repo.
+- Notebook outputs were removed for readability.
+- The Colab install cell was replaced with `requirements.txt`.
+- The sample dataset is bundled locally with attribution.
+- The WordNet alias issue was fixed by defining both `wn` and `wordnet`.
+- Report-level findings are summarized in [results-summary.md](results-summary.md).
 
 ## Limits
 
@@ -31,8 +31,8 @@ The paper behind that code studied MQTT-based IoT MITM scenarios and a BERT-base
 - Results may vary across Python, package and model versions.
 - Transformer model downloads can make first runs slow.
 - The dataset is small and synthetic relative to real IoT deployments.
-- The reproduction does not prove deployability in resource-constrained IoT devices.
-- I did not reproduce the original Raspberry Pi / WiFi Pineapple MITM hardware setup.
+- Deployment on resource-constrained IoT devices was not evaluated.
+- The original hardware MITM setup is outside this repo's scope.
 
 ## Ethical Scope
 

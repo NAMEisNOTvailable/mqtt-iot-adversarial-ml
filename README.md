@@ -1,8 +1,8 @@
 # MQTT IoT Adversarial ML Reproduction
 
-This is a software-only reproduction project on MQTT IoT security and adversarial machine learning.
+Software-only reproduction of an MQTT IoT security study on adversarial message generation and anomaly-detection evaluation.
 
-I reproduced the software workflow from a published study: generating MQTT-like adversarial messages, running several anomaly-detection classifiers, and comparing accuracy and false negatives across perturbation settings.
+The workflow generates MQTT-like adversarial messages from sample telemetry data, runs five classifiers, and compares accuracy and false negatives across perturbation settings.
 
 ## Start Here
 
@@ -10,17 +10,17 @@ I reproduced the software workflow from a published study: generating MQTT-like 
 - Results summary: [docs/results-summary.md](docs/results-summary.md)
 - Reproduction notes: [docs/reproduction-notes.md](docs/reproduction-notes.md)
 
-## What I Did
+## What It Covers
 
-- Used the sample weather telemetry data from the original code repository.
-- Generated adversarial MQTT-like messages from numeric and text-like fields.
-- Benchmarked Logistic Regression, Random Forest, KNN, MLP and SVC.
-- Compared accuracy and false negatives across changing gamma values.
-- Documented dependency fixes and reproduction limits.
+- Uses sample weather telemetry data from the original code repository.
+- Generates adversarial MQTT-like messages from numeric and text-like fields.
+- Evaluates Logistic Regression, Random Forest, KNN, MLP and SVC.
+- Compares accuracy and false negatives across changing gamma values.
+- Documents dependency fixes and reproduction limits.
 
 ## Main Takeaway
 
-The run showed a clear change in model behaviour as generated messages were perturbed: discriminator accuracy ranged from `0.508` to `0.832`, and false negatives ranged from `15/250` to `72/250`. The project is mainly useful as a reproduction record: it checks whether the original software workflow runs, compares how the models respond, and notes what the result does not prove.
+In the saved run, discriminator accuracy ranged from `0.508` to `0.832`, and false negatives ranged from `15/250` to `72/250`. These numbers are specific to the software workflow and sample dataset used here.
 
 ## Files
 
@@ -29,7 +29,7 @@ The run showed a clear change in model behaviour as generated messages were pert
 | `notebooks/mqtt_adversarial_ml_reproduction.ipynb` | Notebook with outputs removed. |
 | `data/weather_sample_data.csv` | Sample data from the original MIT-licensed repo. |
 | `docs/results-summary.md` | Result numbers and interpretation. |
-| `docs/reproduction-notes.md` | What changed from the original code and what was not reproduced. |
+| `docs/reproduction-notes.md` | Reproduction scope, changes and limitations. |
 | `scripts/check_repo.py` | Small check to catch missing files or accidental course/private markers. |
 
 ## Run Locally

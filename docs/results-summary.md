@@ -1,10 +1,10 @@
 # Results Summary
 
-## What I Was Checking
+## Question
 
-I treated this as a reproduction check, not a claim that I had built a new attack method.
+Can generated MQTT-like messages change anomaly-detection behaviour in the reproduced software workflow?
 
-The question was simple: if MQTT-like telemetry messages are modified by the adversarial generator, how do standard anomaly-detection models respond? I focused on the software workflow from the original study, not the hardware MITM testbed.
+The experiment modifies sample telemetry messages, runs several classifiers, and compares accuracy and false negatives as the perturbation setting changes.
 
 ## Models
 
@@ -14,20 +14,16 @@ The question was simple: if MQTT-like telemetry messages are modified by the adv
 - Multi-Layer Perceptron
 - Support Vector Classification
 
-## Results I Would Cite
+## Results
 
 From the saved notebook run:
 
-- Gamma values ran from about `1.1` to `4.0`.
+- Gamma values covered about `1.1` to `4.0`.
 - Discriminator accuracy ranged from `0.508` to `0.832`.
 - False negatives ranged from `15/250` to `72/250`.
 - The largest saved false-negative count appeared around gamma `2.1`.
 - Different models reacted differently, so the result does not support one clean "best gamma" across every classifier.
 
-## How I Read It
+## Interpretation
 
-The useful result is not that one number is impressive. The useful result is that false negatives and accuracy move as the generated messages change, and the pattern depends on the model. That makes this a good reproduction/evaluation project, but it should not be overstated as a complete IoT attack implementation.
-
-## Short CV Version
-
-Reproduced a software-only MQTT adversarial-message study, benchmarking five anomaly-detection classifiers against BERT/GAN-inspired messages and analysing accuracy, false negatives, gamma sensitivity and deployment limitations.
+The result is useful for comparing classifier sensitivity to generated MQTT-like messages. Accuracy and false negatives moved as the generated messages changed, and the pattern differed by classifier.
