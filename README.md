@@ -12,12 +12,11 @@ I reproduced the software workflow from a published study: generating MQTT-like 
 
 ## What I Did
 
-- Adapted the original MIT-licensed notebook into a local reproduction.
 - Used the sample weather telemetry data from the original code repository.
 - Generated adversarial MQTT-like messages from numeric and text-like fields.
 - Benchmarked Logistic Regression, Random Forest, KNN, MLP and SVC.
 - Compared accuracy and false negatives across changing gamma values.
-- Recorded the dependency issue I had to fix and the parts of the original experiment I did not reproduce.
+- Documented dependency fixes and reproduction limits.
 
 ## Main Takeaway
 
