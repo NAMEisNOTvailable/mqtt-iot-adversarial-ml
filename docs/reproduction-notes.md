@@ -27,7 +27,7 @@ The paper behind that code studied MQTT-based IoT MITM scenarios and a BERT-base
 
 ## Limits
 
-- This is a software-only reproduction, not a live network attack implementation.
+- This repository focuses on the reproduced notebook workflow, not a live network attack implementation.
 - Results may vary across Python, package and model versions.
 - Transformer model downloads can make first runs slow.
 - The dataset is small and synthetic relative to real IoT deployments.

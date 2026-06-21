@@ -1,6 +1,6 @@
 # MQTT IoT Adversarial ML Reproduction
 
-Software-only reproduction of an MQTT IoT security study on adversarial message generation and anomaly-detection evaluation.
+Reproduction of an MQTT IoT security study on adversarial message generation and anomaly-detection evaluation.
 
 The workflow generates MQTT-like adversarial messages from sample telemetry data, runs five classifiers, and compares accuracy and false negatives across perturbation settings.
 
@@ -45,7 +45,7 @@ The notebook can take time to run because it loads transformer models and repeat
 
 ## Scope
 
-This is a controlled, software-only reproduction for defensive security research and model-evaluation practice. It does not include a live MQTT broker, Raspberry Pi devices, WiFi Pineapple hardware, or instructions for attacking real systems.
+This is a controlled reproduction for defensive security research and model-evaluation practice. It does not include a live MQTT broker, Raspberry Pi devices, WiFi Pineapple hardware, or instructions for attacking real systems.
 
 ## Attribution
 

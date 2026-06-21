@@ -61,7 +61,7 @@ def main() -> int:
 
     readme = read_text(ROOT / "README.md")
     expected_phrases = [
-        "software-only reproduction",
+        "anomaly-detection evaluation",
         "attribution",
         "defensive security research",
     ]
