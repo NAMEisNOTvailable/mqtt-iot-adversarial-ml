@@ -1,32 +1,39 @@
 # MQTT IoT Adversarial ML Reproduction
 
-Software-only reproduction of an MQTT IoT security study that uses BERT/GAN-inspired adversarial message generation to test anomaly-detection models.
+This is a cleaned-up version of a university reproduction project on MQTT IoT security and adversarial machine learning.
 
-This repo packages a university reproduction study into a cleaner portfolio artifact: a runnable notebook, sample data, result notes, limitations, and attribution to the original MIT-licensed research code.
+I reproduced the software side of a published study that generated MQTT-like adversarial messages and tested how several anomaly-detection models responded. I did not reproduce the original Raspberry Pi / WiFi Pineapple MITM setup. The useful part here is the evaluation workflow: generate modified messages, run classifiers, compare accuracy and false negatives, and write down where the reproduction has limits.
 
-## Quick Review Path
+## Start Here
 
-1. Read the scope and result summary: [docs/results-summary.md](docs/results-summary.md)
-2. Check reproduction decisions and limitations: [docs/reproduction-notes.md](docs/reproduction-notes.md)
-3. Open the cleaned notebook: [notebooks/mqtt_adversarial_ml_reproduction.ipynb](notebooks/mqtt_adversarial_ml_reproduction.ipynb)
+- Notebook: [notebooks/mqtt_adversarial_ml_reproduction.ipynb](notebooks/mqtt_adversarial_ml_reproduction.ipynb)
+- Results summary: [docs/results-summary.md](docs/results-summary.md)
+- Reproduction notes: [docs/reproduction-notes.md](docs/reproduction-notes.md)
 
-## What This Demonstrates
+## What I Did
 
-- Reproduced a software-only MQTT adversarial-message workflow from a published IoT security study.
-- Generated MQTT-like adversarial telemetry messages from a sample weather dataset.
-- Benchmarked Logistic Regression, Random Forest, KNN, MLP and SVC anomaly-detection classifiers.
-- Compared accuracy and false-negative behaviour across changing perturbation settings.
-- Documented reproduction gaps, dependency fixes and deployment limitations instead of overstating the result.
+- Adapted the original MIT-licensed notebook into a cleaner local reproduction.
+- Used the sample weather telemetry data from the original code repository.
+- Generated adversarial MQTT-like messages from numeric and text-like fields.
+- Benchmarked Logistic Regression, Random Forest, KNN, MLP and SVC.
+- Compared accuracy and false negatives across changing gamma values.
+- Recorded the dependency issue I had to fix and the parts of the original experiment I did not reproduce.
 
-## Repository Contents
+## Main Takeaway
+
+The saved run showed that model behaviour changed noticeably as the generated messages were perturbed. Discriminator accuracy ranged from `0.508` to `0.832`, while false negatives ranged from `15/250` to `72/250`.
+
+I would not present this as a new attack method. It is better read as a reproduction and evaluation exercise: a small study of how adversarially generated IoT-style messages can affect anomaly-detection results, and what has to be treated carefully when reproducing that kind of paper.
+
+## Files
 
 | Path | Purpose |
 | --- | --- |
-| `notebooks/mqtt_adversarial_ml_reproduction.ipynb` | Cleaned public notebook for the reproduction workflow. |
-| `data/weather_sample_data.csv` | Sample telemetry dataset from the original MIT-licensed code repository. |
-| `docs/results-summary.md` | Main findings, supported metrics and interpretation. |
-| `docs/reproduction-notes.md` | Attribution, reproduction scope and known deviations from the original setup. |
-| `scripts/check_repo.py` | Lightweight repository hygiene check for the public artifact. |
+| `notebooks/mqtt_adversarial_ml_reproduction.ipynb` | Cleaned notebook with outputs removed. |
+| `data/weather_sample_data.csv` | Sample data from the original MIT-licensed repo. |
+| `docs/results-summary.md` | The result numbers I would actually cite. |
+| `docs/reproduction-notes.md` | What changed from the original code and what was not reproduced. |
+| `scripts/check_repo.py` | Small check to catch missing files or accidental course/private markers. |
 
 ## Run Locally
 
@@ -41,10 +48,10 @@ The notebook can take time to run because it loads transformer models and repeat
 
 ## Scope
 
-This is a controlled reproduction and analysis artifact. It does not include a live MQTT broker, Raspberry Pi devices, WiFi Pineapple hardware, or instructions for attacking real systems. The work is intended for defensive security research, model-evaluation practice and portfolio review.
+This is a controlled, software-only reproduction for defensive security research and model-evaluation practice. It does not include a live MQTT broker, Raspberry Pi devices, WiFi Pineapple hardware, or instructions for attacking real systems.
 
 ## Attribution
 
-The notebook adapts code and sample data from [HenryCWong/adversarialBERTMessages](https://github.com/HenryCWong/adversarialBERTMessages), released under the MIT License. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+The notebook adapts code and sample data from [HenryCWong/adversarialBERTMessages](https://github.com/HenryCWong/adversarialBERTMessages), which is released under the MIT License. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 Original paper: Henry Wong and Tie Luo, *Man-in-the-Middle Attacks on MQTT-based IoT Using BERT Based Adversarial Message Generation*.

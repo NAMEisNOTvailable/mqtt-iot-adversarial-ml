@@ -1,12 +1,12 @@
 # Results Summary
 
-## Reproduction Question
+## What I Was Checking
 
-The study asked whether adversarial MQTT-like messages could affect anomaly-detection models by increasing false negatives or reducing detection accuracy.
+I treated this as a reproduction check, not a claim that I had built a new attack method.
 
-The reproduction focused on the software and algorithmic part of the original work rather than the original hardware MITM testbed.
+The question was simple: if MQTT-like telemetry messages are modified by the adversarial generator, how do standard anomaly-detection models respond? I focused on the software workflow from the original study, not the hardware MITM testbed.
 
-## Models Benchmarked
+## Models
 
 - Logistic Regression
 - Random Forest
@@ -14,21 +14,20 @@ The reproduction focused on the software and algorithmic part of the original wo
 - Multi-Layer Perceptron
 - Support Vector Classification
 
-## Supported Findings
+## Results I Would Cite
 
-The saved notebook and report support these claims:
+From the saved notebook run:
 
-- The experiment generated adversarial MQTT-like messages from sample telemetry data and evaluated model behaviour under changing gamma values.
-- The discriminator run covered gamma values from approximately `1.1` to `4.0`.
-- In the saved discriminator run, accuracy ranged from `0.508` to `0.832`.
-- False negatives ranged from `15/250` to `72/250`, with the largest saved value occurring around gamma `2.1`.
-- The report found that false-negative behaviour and accuracy were sensitive to perturbation settings, but model responses were not uniform.
-- The reproduction did not establish one stable gamma value that generalises cleanly across every model.
+- Gamma values ran from about `1.1` to `4.0`.
+- Discriminator accuracy ranged from `0.508` to `0.832`.
+- False negatives ranged from `15/250` to `72/250`.
+- The largest saved false-negative count appeared around gamma `2.1`.
+- Different models reacted differently, so the result does not support one clean "best gamma" across every classifier.
 
-## Interpretation
+## How I Read It
 
-The project is strongest as a reproduction and evaluation exercise, not as a claim of a new attack method. Its value is in showing how generated adversarial messages can be tested against multiple anomaly-detection models, how false negatives can be tracked, and how reproduction limitations should be documented.
+The useful result is not that one number is impressive. The useful result is that false negatives and accuracy move as the generated messages change, and the pattern depends on the model. That makes this a good reproduction/evaluation project, but it should not be overstated as a complete IoT attack implementation.
 
-## Resume-Ready Summary
+## Short CV Version
 
 Reproduced a software-only MQTT adversarial-message study, benchmarking five anomaly-detection classifiers against BERT/GAN-inspired messages and analysing accuracy, false negatives, gamma sensitivity and deployment limitations.
