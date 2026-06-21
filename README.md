@@ -44,7 +44,7 @@ The notebook can take time to run because it loads transformer models and repeat
 
 ## Scope
 
-This is a controlled reproduction for defensive security research and model-evaluation practice. It does not include a live MQTT broker, Raspberry Pi devices, WiFi Pineapple hardware, or instructions for attacking real systems.
+Use this repository only in a local, controlled environment for defensive security research and model-evaluation practice. It is not intended for testing real systems without explicit authorization.
 
 ## Attribution
 

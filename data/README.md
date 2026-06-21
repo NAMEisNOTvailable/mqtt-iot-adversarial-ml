@@ -4,4 +4,4 @@
 
 https://github.com/HenryCWong/adversarialBERTMessages
 
-The file is included so the public reproduction notebook can run without depending only on a remote URL.
+The file is included so the notebook can run without relying on a remote download.

@@ -17,22 +17,21 @@ The paper behind that code studied MQTT-based IoT MITM scenarios and a BERT-base
 - Evaluation of generated messages with multiple anomaly-detection classifiers.
 - Comparison of accuracy and false-negative behaviour across perturbation settings.
 
-## Repo Adjustments
+## Implementation Notes
 
-- Notebook outputs were removed for readability.
-- The Colab install cell was replaced with `requirements.txt`.
+- Dependencies are listed in `requirements.txt`.
 - The sample dataset is bundled locally with attribution.
-- The WordNet alias issue was fixed by defining both `wn` and `wordnet`.
+- The WordNet alias issue is handled by defining both `wn` and `wordnet`.
 - Report-level findings are summarized in [results-summary.md](results-summary.md).
 
 ## Limits
 
-- This repository focuses on the reproduced notebook workflow, not a live network attack implementation.
+- The repository focuses on generated-message evaluation, not live network interception.
 - Results may vary across Python, package and model versions.
 - Transformer model downloads can make first runs slow.
 - The dataset is small and synthetic relative to real IoT deployments.
 - Deployment on resource-constrained IoT devices was not evaluated.
-- The original hardware MITM setup is outside this repo's scope.
+- Hardware testbed replication is outside the repository scope.
 
 ## Ethical Scope
 
